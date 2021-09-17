@@ -8,6 +8,20 @@ body{
     background-color: #DEF2F1;
     font-family: 'Bebas Neue', sans-serif;
 }
+.noBooks{
+    display: block;
+    text-align: center;
+}
+.material-icons{
+    opacity: 80%;
+    color:#17253a;
+    font-size: 100px !important;
+}
+.error{
+    opacity: 80%;
+    font-size: 30px;
+    color:#17253a;
+}
 .header{
     background-color:  #2b7a78;
     align-items: center;
@@ -99,6 +113,10 @@ button:hover{
     
     background-color: rgba(0, 0, 0, 0.699);
 }
+h2{
+    text-decoration: underline;
+    margin: 10px;
+}
 .formContainer{
     display: flex;
     flex-direction: column;
@@ -112,9 +130,11 @@ button:hover{
     border: solid 5px black;
     border-radius: 12px;
 }
+h1{
+    text-decoration: underline;
+}
 input{
     margin: 10px;
-    padding:10px;
     padding:10px 20px;
     border-radius: 50px;
     border:none;
@@ -143,16 +163,20 @@ input[type='radio']{
 }
 .flexButton{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+}
+.edit{
+    background-color: rgb(37, 109, 31);
+    flex:1;
+}
+.editDelete{
+    display: flex;
+    flex-direction:row;
 }
 .red{
     background:crimson;
     padding: 10px, -10px;
-}
-.red img{
-    width: 20px;
-    height:20px;
+    flex:1;
 }
 button.red:active{
     background: rgb(161, 15, 44);
