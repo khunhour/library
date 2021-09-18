@@ -48,6 +48,22 @@ body{
     text-decoration: underline;
     margin-left: 10px;
 }
+.statContainer{
+    display: flex;
+    justify-content: center;
+}
+.stat{
+    background-color:  #2b7a78;
+    align-items: center;
+    margin: 8px 10px;
+    border-radius: 12px;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px 30px;
+    border-bottom: solid 3px #17253a;
+    letter-spacing: 2px;
+}
 .myBook{
     font-size: 45px;
     font-weight: 800;
@@ -150,7 +166,7 @@ input[type='radio']{
     border-bottom: solid 3px #17253a;
 }
 
-.readButton{
+.button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,7 +189,7 @@ input[type='radio']{
     display: flex;
     flex-direction:row;
 }
-.red{
+.delete{
     background:crimson;
     padding: 10px, -10px;
     flex:1;

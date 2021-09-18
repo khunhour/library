@@ -25,7 +25,11 @@
     </div>
     <div class="secondHeader">
         <div class="myBook">My Books</div>
-        <div class="stat"></div>
+        <div class="statContainer">
+            <div id="totalBooks" class="stat"></div>
+            <div id="totalRead" class="stat"></div>
+            <div id="totalUnread" class="stat"></div>
+        </div>
     </div>
     <div class="content"></div>
     <div class="noBooks">
@@ -41,7 +45,7 @@
             <input type="text" id="author" placeholder="Author:" required/>
             <input type="number" id="pages" placeholder="Number of Pages:" required/>
             <div>
-                <input type="radio" id="notRead" name="readOrNot" value="Not Yet Read" required/>
+                <input type="radio" id="notRead" name="readOrNot" value="Not Yet Read" checked/>
                 <label for="notRead">Not Yet Read</label>
                 <input type="radio" id="read" name="readOrNot" value="Read"/>
                 <label for="read">Read</label>

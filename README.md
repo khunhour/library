@@ -14,9 +14,9 @@
   - can toggle read & unread button
   - can edit existing card and update them
   - can delete entire book or card
-  - form pop up
+  - form pops up
+  - show total books statistics
 
 # Functionality that are not yet fixed or have
 
   - a log in feature where you can see existing books enter earlier(using JSON)
-  - show total books statistics
