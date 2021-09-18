@@ -15,6 +15,8 @@ const submitButton = document.querySelector("#submit");
 const totalBooks = document.querySelector("#totalBooks");
 const totalRead = document.querySelector("#totalRead");
 const totalUnread = document.querySelector("#totalUnread");
+const noBooks = document.querySelector('.noBooks');
+const content = document.querySelector(".content");
 
 let readStatus;
 let currentIndex;
@@ -107,8 +109,7 @@ function updateStat(){
 
 //display all the objects in the array
 function displayCards(){
-    const error = document.querySelector('.noBooks');
-    const content = document.querySelector(".content");
+    
 
     updateStat();
     content.textContent="";
@@ -171,15 +172,8 @@ function displayCards(){
         //                         </div>
         //                     <div>`;
     });
+    checkBookExist();
 
-    //a feature to display no books when there is no books
-
-    if(content.innerHTML===""){
-        error.style.display = "block";
-    }
-    else{
-        error.style.display = "none";
-    }
     //add event listener to all read buttons
     const buttons = document.querySelectorAll('#readButton');
     buttons.forEach((button) =>{
@@ -198,6 +192,7 @@ function displayCards(){
         item.addEventListener("click", editValue);
     });
 }
+
 //change read status function
 function changeButton(e){
     currentIndex = e.target.parentNode.dataset.index;
@@ -208,7 +203,8 @@ function changeButton(e){
     else{
         myLibrary[currentIndex].read = "Not Yet Read";
     }
-    displayCards();
+    const change = document.querySelector(`[data-index = "${currentIndex}"]`);
+    change.firstChild.textContent = myLibrary[currentIndex].read;
 }
 
 //delete card function
@@ -238,7 +234,12 @@ function editValue(e){
     showForm();
 }
 
-
-function stat(){
-
+//display no books found if there's no book function
+function checkBookExist(){
+    if(content.innerHTML===""){
+        noBooks.style.display = "block";
+    }
+    else{
+        noBooks.style.display = "none";
+    }
 }
