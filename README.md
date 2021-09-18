@@ -1,6 +1,7 @@
 # library
+    
+  -A web libray where you can add books(title, author, pages, read or unread) to the form and it will display it as cards.
 
-create a library page where people can add new books info and the page will display the info in terms of card. it does have delete function.
 # Build With
 
   -HTML5
@@ -13,6 +14,7 @@ create a library page where people can add new books info and the page will disp
   -can toggle read & unread button
   -can edit existing card and update them
   -can delete entire book or card
+  -form pop up
 
 # Functionality that are not yet fixed or have
 
