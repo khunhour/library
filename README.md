@@ -1,6 +1,7 @@
 # library
   - A web libray where you can add books(title, author, pages, read or unread) to the form and it will display it as cards.
   - A project of The Odin Project
+  - check out the Live Preview: https://khunhour.github.io/library/
 # Build With
   - HTML5
   - CSS
