@@ -198,11 +198,25 @@ button.red:active{
     background: rgb(161, 15, 44);
 }
 .footer{
+    display: flex;
     margin-top:auto;
-    background-color: #1F2937;
+    background-color: #0aa7a7;
     color: #E5E7EB;
-    font-size: 25px;
-    text-align: center;
+    font-size: 30px;
+    justify-content: center;
     padding:8px;
     letter-spacing: 1.5px;
+}
+.footer img{
+    margin:0px 5px;
+    background-color: #DEF2F1;
+    border: solid 2px #DEF2F1;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+}
+.footer img:hover{
+    border-color: #df5b03;
+    transform: scale(1.1);
 }

@@ -22,7 +22,6 @@ let readStatus;
 let currentIndex;
 
 updateStat();
-
 //when you click add new book this happen
 const submit = document.getElementById("format");
 submit.addEventListener("submit", submitForm);
@@ -109,7 +108,6 @@ function updateStat(){
 
 //display all the objects in the array
 function displayCards(){
-    
 
     updateStat();
     content.textContent="";
@@ -173,7 +171,6 @@ function displayCards(){
         //                     <div>`;
     });
     checkBookExist();
-
     //add event listener to all read buttons
     const buttons = document.querySelectorAll('#readButton');
     buttons.forEach((button) =>{
@@ -205,6 +202,7 @@ function changeButton(e){
     }
     const change = document.querySelector(`[data-index = "${currentIndex}"]`);
     change.firstChild.textContent = myLibrary[currentIndex].read;
+    updateStat();
 }
 
 //delete card function
