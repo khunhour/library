@@ -1,21 +1,3 @@
-//firebase code
-
-import { initializeApp } from "firebase/app";
-
-// TODO: Replace the following with your app's Firebase project configuration
-const firebaseConfig = {
-	apiKey: "AIzaSyCmMbFwWZYubcfcopowOOLDwBMupXTqlOc",
-	authDomain: "library-b7aba.firebaseapp.com",
-	projectId: "library-b7aba",
-	storageBucket: "library-b7aba.appspot.com",
-	messagingSenderId: "275669996212",
-	appId: "1:275669996212:web:41e1386247de6158017de1",
-};
-
-const app = initializeApp(firebaseConfig);
-
-//firebase code
-
 let myLibrary = [];
 
 function book(title, author, pages, read) {
