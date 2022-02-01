@@ -117,6 +117,17 @@ function authStateObserver(user) {
 	}
 }
 
+// Adds a size to Google Profile pics URLs.
+function addSizeToGoogleProfilePic(url) {
+	if (
+		url.indexOf("googleusercontent.com") !== -1 &&
+		url.indexOf("?") === -1
+	) {
+		return url + "?sz=150";
+	}
+	return url;
+}
+
 // Saves message on form submit.
 signOutButtonElement.addEventListener("click", signOutUser);
 signInButtonElement.addEventListener("click", signIn);
