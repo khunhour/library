@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<script defer src="./main.js"></script>
+		<title>My Book Library</title>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		/>
+		<link rel="icon" type="icon/text" href="images/book.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<img src="images/book.png" alt="book" />
+				<div class="library">Library</div>
+			</div>
+			<div class="button">
+				<button id="newBook">+ New Book</button>
+				<div id="user-container">
+					<div hidden id="user-pic"></div>
+					<div hidden id="user-name"></div>
+					<button hidden id="sign-out">Sign-out</button>
+					<button id="sign-in">Sign-in with Google</button>
+				</div>
+			</div>
+		</div>
+		<div class="secondHeader">
+			<div class="myBook">My Books</div>
+			<div class="statContainer">
+				<div id="totalBooks" class="stat"></div>
+				<div id="totalRead" class="stat"></div>
+				<div id="totalUnread" class="stat"></div>
+			</div>
+		</div>
+		<div class="content"></div>
+		<div class="noBooks">
+			<span class="material-icons"> error </span>
+			<div class="error">No Books Found</div>
+		</div>
+		<div id="form" class="form">
+			<form id="format" class="formContainer" autocomplete="off">
+				<h1 style="font-size: 40px">New Book Info</h1>
+				<input type="text" id="title" placeholder="Title:" required />
+				<input type="text" id="author" placeholder="Author:" required />
+				<input
+					type="number"
+					id="pages"
+					placeholder="Number of Pages:"
+					required
+				/>
+				<div>
+					<input
+						type="radio"
+						id="notRead"
+						name="readOrNot"
+						value="Not Yet Read"
+						checked
+					/>
+					<label for="notRead">Not Yet Read</label>
+					<input
+						type="radio"
+						id="read"
+						name="readOrNot"
+						value="Read"
+					/>
+					<label for="read">Read</label>
+				</div>
+				<div class="submit">
+					<button type="submit" id="submit">Add Book</button>
+					<button type="button" id="cancel">Cancel</button>
+				</div>
+			</form>
+		</div>
+		<div class="footer">
+			copyright &copy khunhour
+			<a href="https://github.com/khunhour/library/tree/main"
+				><img src="images/github.png" alt="git hub icon" />
+			</a>
+		</div>
+	</body>
+</html>

@@ -1,6 +1,6 @@
 let myLibrary = [];
 
-function book(title, author, pages, read) {
+function Book(title, author, pages, read) {
 	this.title = title;
 	this.author = author;
 	this.pages = pages;
@@ -21,18 +21,20 @@ const content = document.querySelector(".content");
 let readStatus;
 let currentIndex;
 
-updateStat();
-//when you click add new book this happen
-const submit = document.getElementById("format");
-submit.addEventListener("submit", submitForm);
+export default function initializePage() {
+	updateStat();
+	//when you click add new book this happen
+	const submit = document.getElementById("format");
+	submit.addEventListener("submit", submitForm);
 
-//when you click cancel on form it dissapear without inserting value
-const cancel = document.getElementById("cancel");
-cancel.addEventListener("click", hideForm);
+	//when you click cancel on form it dissapear without inserting value
+	const cancel = document.getElementById("cancel");
+	cancel.addEventListener("click", hideForm);
 
-//show pop up form when click new book, event
-const newBook = document.getElementById("newBook");
-newBook.addEventListener("click", showForm);
+	//show pop up form when click new book, event
+	const newBook = document.getElementById("newBook");
+	newBook.addEventListener("click", showForm);
+}
 
 function submitForm(e) {
 	let processedBook = processInfo();
@@ -68,12 +70,12 @@ function hideForm() {
 //process entered info and add to object constructor
 function processInfo() {
 	//checking read or unread button is check on form
-	for (i = 0; i < read.length; i++) {
+	for (let i = 0; i < read.length; i++) {
 		if (read[i].checked) {
 			readStatus = read[i].value;
 		}
 	}
-	const addBook = new book(
+	const addBook = new Book(
 		title.value,
 		author.value,
 		pages.value,
@@ -95,7 +97,7 @@ function editBookInLibrary(book) {
 function updateStat() {
 	let readNum = 0;
 	let unreadNum = 0;
-	for (i = 0; i < myLibrary.length; i++) {
+	for (let i = 0; i < myLibrary.length; i++) {
 		if (myLibrary[i].read === "Read") {
 			readNum++;
 		} else {
@@ -127,7 +129,7 @@ function displayCards() {
 			`Author: ${object.author}`,
 			`Pages: ${object.pages}`,
 		];
-		for (i = 0; i < infoArray.length; i++) {
+		for (let i = 0; i < infoArray.length; i++) {
 			const div = document.createElement("div");
 			div.textContent = infoArray[i];
 			info.appendChild(div);
@@ -152,28 +154,13 @@ function displayCards() {
 
 		const edit = document.createElement("button");
 		let buttonArray = ["edit", "delete"];
-		for (i = 0; i < buttonArray.length; i++) {
+		for (let i = 0; i < buttonArray.length; i++) {
 			const btn = document.createElement("button");
 			btn.textContent = buttonArray[i];
 			btn.classList.add("button", buttonArray[i]);
 			editDelete.appendChild(btn);
 		}
 		index++;
-
-		//the above code with create element is the same as the code below but for security reasons, innerHTML is not used
-		// card.innerHTML = `<div class="info">
-		//                         <div>Title: ${object.title}</div>
-		//                         <div>Author: ${object.author}</div>
-		//                         <div>Pages: ${object.pages}<div>
-
-		//                         <div class="flexButton" data-index=${i}>
-		//                             <button id="readButton" class="button">${object.read === "Read"? "Read" : "Not Yet Read"}</button>
-		//                             <div class="editDelete">
-		//                                 <button class="button edit">edit</button>
-		//                                 <button class="button delete">delete</button>
-		//                             </div>
-		//                         </div>
-		//                     <div>`;
 	});
 	checkBookExist();
 	//add event listener to all read buttons
@@ -224,7 +211,7 @@ function editValue(e) {
 	pages.value = myLibrary[currentIndex].pages;
 	author.value = myLibrary[currentIndex].author;
 
-	for (i = 0; i < read.length; i++) {
+	for (let i = 0; i < read.length; i++) {
 		//read.length is 2 inputs with radio buttons
 		if (myLibrary[currentIndex].read === read[i].value) {
 			read[i].checked = true;
